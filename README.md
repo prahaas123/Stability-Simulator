@@ -33,9 +33,11 @@ Aircraft_6DOF_Stability_Simulator/
 
 1. **Python Packages**:
    Install the required libraries via pip:
-   \`\`\`bash
-   pip install numpy pandas matplotlib pyvista flightgear-python ussa1976
-   \`\`\`
+
+```bash
+pip install numpy pandas matplotlib pyvista flightgear-python ussa1976
+```
+
 2. **FlightGear**:
    Download and install [FlightGear](https://www.flightgear.org/) for 3D visualization.
 
@@ -46,7 +48,8 @@ If you change your aircraft's geometry or center of gravity, generate the requir
 
 2. **Configure Aircraft Parameters**
 Open `main.py` and adjust your aircraft's mass properties and initial conditions:
-\`\`\`python
+
+```python
 plane_model = {
     "S_m2": 0.5,          # Wing Area
     "b_m": 2.0,           # Wingspan
@@ -56,19 +59,22 @@ plane_model = {
     "Jyy_kgm2": 0.35,     # Pitch Inertia
     "Jzz_kgm2": 0.50      # Yaw Inertia
 }
-\`\`\`
+```
 
 3. **Launch FlightGear (Listener Mode)**
 Before running the Python simulator, open your terminal and launch FlightGear with network FDM enabled. This tells FlightGear to turn off its internal physics and wait for UDP packets from Python on port `5501` and `5502`.
-\`\`\`bash
+
+```bash
 fgfs --fdm=network,localhost,5501,5502,udp --aircraft=c172p --lat=43.456 --lon=-80.383 --altitude=50
-\`\`\`
+```
 
 4. **Run the Simulator**
 With FlightGear waiting on the runway, run the main simulator script:
-\`\`\`bash
+
+```bash
 python main.py
-\`\`\`
+```
+
 **What happens next:**
 1. The forward Euler integrator calculates the entire 10-second flight path instantly.
 2. A Matplotlib dashboard pops up showing the 12 state variables over time.
