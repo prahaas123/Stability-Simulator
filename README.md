@@ -11,9 +11,9 @@ A complete 6-Degree-of-Freedom (6-DOF) flight dynamics simulation environment bu
 * **Real-Time FlightGear Visualization**: Broadcasts telemetry over UDP directly into FlightGear to animate your custom aircraft's flight trajectory in 3D.
 * **Comprehensive Data Plotting**: Automatically generates a 4x3 Matplotlib dashboard of all 12 state vectors (velocities, rates, angles, positions).
 
-## 🗂️ Project Structure
+## Project Structure
 
-\`\`\`text
+```text
 Aircraft_6DOF_Stability_Simulator/
 ├── databases/
 │   ├── cfd_sweep.csv           # Raw CFD lift/drag/pitch vs Alpha tables
@@ -27,7 +27,7 @@ Aircraft_6DOF_Stability_Simulator/
 ├── vsp_single_design.py         # OpenVSP API script for meshing and aero sweeps
 ├── main.py                      # Top-level execution, plotting, and FlightGear UDP
 └── README.md
-\`\`\`
+```
 
 ## Prerequisites & Installation
 
