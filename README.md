@@ -5,7 +5,7 @@ A complete 6-Degree-of-Freedom (6-DOF) flight dynamics simulation environment bu
 ## Key Features
 
 * **6-DOF Physics Engine**: Solves the full non-linear equations of motion for a rigid body in flight, including translational accelerations, rotational rates, and Euler angle kinematics.
-* **Numerical Integration**: High-fidelity, stable integration at fast time steps (e.g., 100 Hz / 0.01s) to eliminate numerical divergence.
+* **Numerical Integration**: High-fidelity, stable integration at fast time steps (e.g., 1000 Hz / 0.001s) to eliminate numerical divergence.
 * **Control Surface Mixing**: Built-in elevon mixing matrix for blended-wing/delta-wing configurations.
 * **Real-Time FlightGear Visualization**: Broadcasts telemetry over UDP directly into FlightGear to animate your custom aircraft's flight trajectory in 3D.
 * **Comprehensive Data Plotting**: Automatically generates a 4x3 Matplotlib dashboard of all 12 state vectors (velocities, rates, angles, positions).
@@ -18,7 +18,7 @@ Aircraft_6DOF_Stability_Simulator/
 │   ├── cfd_sweep.csv           # Raw CFD lift/drag/pitch vs Alpha tables
 │   └── vsp_derivatives.csv     # Extracted stability & control derivatives
 ├── tools/
-│   ├── numerical_integration.py # RK4 and Forward Euler math engines
+│   ├── numerical_integration.py # Forward Euler integration
 │   └── interpolators.py         # Fast table lookups for aerodynamics
 ├── equations/
 │   └── physics_6dof.py          # The core 6-DOF equations of motion
@@ -75,7 +75,7 @@ python main.py
 
 **What happens next:**
 
-1. The forward Euler integrator calculates the entire 10-second flight path instantly.
+1. The forward Euler integrator calculates the entire 30-second flight path instantly.
 2. A Matplotlib dashboard pops up showing the 12 state variables over time.
 3. In the background, Python connects to FlightGear and plays back the trajectory in real-time.
 
