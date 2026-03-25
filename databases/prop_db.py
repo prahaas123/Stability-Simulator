@@ -13,7 +13,7 @@ def compute_prop_forces(true_airpseed_ms, qbar_pa, throttle):
     prop_torque_Nm:
     prop_moment_Nm:
     '''
-    prop_thrust_N = 10
+    prop_thrust_N = 1.4
     prop_lift_N = 0
     prop_torque_Nm = 0
     prop_moment_Nm = 0

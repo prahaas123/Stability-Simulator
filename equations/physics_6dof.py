@@ -56,7 +56,7 @@ def physics_6dof(time, state, ac_params, atmos_mod):
     qbar_pa = 0.5 * rho_interp_kgm3 * true_airspeed_ms**2  # dynamic pressure [Pa]
     
     alpha_rad = math.atan2(w_b_ms, u_b_ms)  # angle of attack [rad]
-    beta_rad = math.asin(v_b_ms / true_airspeed_ms) if true_airspeed_ms != 0 else 0.0  # sideslip angle [rad
+    beta_rad = math.asin(v_b_ms / true_airspeed_ms) if true_airspeed_ms != 0 else 0.0  # sideslip angle [rad]
     s_alpha = math.sin(alpha_rad)
     c_alpha = math.cos(alpha_rad)
     s_beta = math.sin(beta_rad)
@@ -74,7 +74,7 @@ def physics_6dof(time, state, ac_params, atmos_mod):
     # Propulsion forces and moments
     prop_thrust_N, prop_lift_N, prop_torque_Nm, prop_moment_Nm = compute_prop_forces(true_airspeed_ms, qbar_pa, 100)
     
-    # External forces and moments (REVIEW)
+    # External forces and moments
     Fx_b_N = -(drag_N * c_alpha * c_beta) - (side_N * c_alpha * s_beta) + (lift_N * s_alpha) + prop_thrust_N
     Fy_b_N = -(drag_N * s_beta) + (side_N * c_beta)
     Fz_b_N = -(drag_N * s_alpha * c_beta) - (side_N * s_alpha * s_beta) - (lift_N * c_alpha) - prop_lift_N

@@ -22,10 +22,10 @@ atmos_mod = {"alt_m": alt_m, "rho_kgm3": rho_kgm3, "c_ms": c_ms, "g_ms2": g_ms2}
 
 # Aircraft model
 plane_model = {
-    "S_m2": 0.195,          # Wing Area [m^2]
-    "b_m": 1.3,           # Wingspan [m]
-    "c_m": 0.15,          # Mean Aerodynamic Chord [m]
-    "m_kg": 1.7,          # Mass [kg]
+    "S_m2": 0.090,        # Wing Area [m^2]
+    "b_m": 0.9,           # Wingspan [m]
+    "c_m": 0.12,          # Mean Aerodynamic Chord [m]
+    "m_kg": 0.4,          # Mass [kg]
     "Jxx_kgm2": 0.25,     # Moment of inertia around x-axis [kg*m^2]
     "Jyy_kgm2": 0.35,     # Moment of inertia around y-axis [kg*m^2]
     "Jzz_kgm2": 0.50,     # Moment of inertia around z-axis [kg*m^2]
